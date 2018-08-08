@@ -3,6 +3,14 @@ const Client = require('instagram-private-api').V1;
 const device = new Client.Device(config.username);
 const storage = new Client.CookieFileStorage(__dirname + '/cookies/cookies.json');
 
+const log4js = require('log4js');
+log4js.configure({
+    appenders: { tracelog: { type: 'file', filename: 'tracelog.log' } },
+    categories: { default: { appenders: ['tracelog'], level: 'all' } }
+});
+  
+const logger = log4js.getLogger('tracelog');
+
 Client.Session.create(device, storage, config.username, config.password)
     .then((session) => {
         return [session, Client.Account.searchForUser(session, 'instagram')];
@@ -15,13 +23,12 @@ Client.Session.create(device, storage, config.username, config.password)
             const feed = new Client.Feed.TaggedMedia(relationship.session, tag, 5);
 
             feed.get().then(res => {
-                const mediaId = res[Math.floor(Math.random() * res.length)].id;
+                const media = res[Math.floor(Math.random() * res.length)];
                 const comment = generateComment();
 
-                console.log(comment);
-                console.log(mediaId);
-                Client.Comment.create(relationship.session, mediaId, comment);
-                console.log(`Successfully left comment on ${mediaId}`)
+                Client.Comment.create(relationship.session, media.id, comment);
+                logger.debug(`Successfully left comment on ${media.id}`);
+                logger.debug(media);
             });
         });
     });
