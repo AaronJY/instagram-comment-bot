@@ -1,4 +1,5 @@
 const config = require('./config');
+const helpers = require('./helpers');
 const Client = require('instagram-private-api').V1;
 const device = new Client.Device(config.username);
 const storage = new Client.CookieFileStorage(__dirname + '/cookies/cookies.json');
@@ -22,15 +23,15 @@ function init(session) {
         postRandomComment();
     }, config.commentInterval);
 
-    // postRandomComment();
-
     console.log('Running!');
+
+    postRandomComment();
 }
 
 function generateComment() {
-    const score = Math.floor(Math.random() * 11); // 0 - 10
-    const record = config.phrases[Math.floor(Math.random() * config.phrases.length)];
-    return `${record} - ${score}/10`;
+    const score = helpers.getRandomInt(6, 10); // 0 - 10
+    const phrase = config.phrases[Math.floor(Math.random() * config.phrases.length)];
+    return `${phrase} ${score}/10 🤖`;
 }
 
 function postRandomComment() {
