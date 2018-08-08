@@ -28,7 +28,7 @@ function init(session) {
 }
 
 function generateComment() {
-    const score = Math.floor(Math.random() * 6); // 0 - 5
+    const score = Math.floor(Math.random() * 11); // 0 - 10
     const record = config.phrases[Math.floor(Math.random() * config.phrases.length)];
     return `${record} - ${score}/10`;
 }
@@ -40,6 +40,6 @@ function postRandomComment() {
         const comment = generateComment();
 
         Client.Comment.create(this.session, media.id, comment);
-        console.log(`Successfully left comment on ${media.id}`);
+        console.log(`Successfully left comment on ${media.id} (${media.params.code})`);
     });
 }
