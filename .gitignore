@@ -60,4 +60,9 @@ typings/
 # next.js build output
 .next
 
-/cookies
+
+cookies/cookies.json
+config.js
+
+instabot-task.xml
+cookies/
