@@ -1,4 +1,5 @@
 module.exports = {
+    version: "2.1"
     username: 'ten.outa.ten',
     password: '40VgV2VgFwAsYO7RmVHFeFZLgk',
     tag: 'foodporn',

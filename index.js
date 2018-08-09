@@ -8,6 +8,8 @@ var loggedIn = false;
 var feed;
 var session;
 
+console.log(`Version: ${config.version}`);
+
 Client.Session.create(device, storage, config.username, config.password)
     .then((sesh) => {
         console.log('Logged in...');
