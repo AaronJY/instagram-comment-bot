@@ -28,8 +28,6 @@ function init(session) {
     }, config.commentInterval);
 
     console.log('Running!');
-
-    postRandomComment();
 }
 
 function generateComment() {
