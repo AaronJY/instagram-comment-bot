@@ -1,8 +1,5 @@
 module.exports = {
     version: "2.2",
-    username: 'ten.outa.ten.2',
-    password: 'LVHvZA88',
-    tag: 'vegan',
     phrases: [
         'Would look even better with a sausage roll balanced on top.',
         'Disapprove of the use of human limbs. Approve of the use of edible food.',

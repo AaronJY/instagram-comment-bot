@@ -9,10 +9,10 @@ var feed;
 var session;
 
 console.log(`Version: ${config.version}`);
-console.log(`Username: ${config.username}`);
-console.log(`Tag: ${config.tag}`);
+console.log(`Username: ${process.env.USERNAME}`);
+console.log(`Tag: ${process.env.TAG}`);
 
-Client.Session.create(device, storage, config.username, config.password)
+Client.Session.create(device, storage, process.env.USERNAME, process.env.PASSWORD)
     .then((sesh) => {
         console.log('Logged in...');
         loggedIn = true;
