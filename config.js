@@ -2,7 +2,7 @@ module.exports = {
     version: "2.2",
     username: 'ten.outa.ten.2',
     password: 'LVHvZA88',
-    tag: 'foodporn',
+    tag: 'vegan',
     phrases: [
         'Would look even better with a sausage roll balanced on top.',
         'Disapprove of the use of human limbs. Approve of the use of edible food.',
@@ -15,11 +15,11 @@ module.exports = {
         "Is the chicken hidden underneath, or...",
         "This meal would go great with a Robbinson's fruit shoot.",
         "Vegetables have feelings too.",
-        "I'm struggling to find somebody who cares in my database.",
         "Meat is neat.",
         "You need God.",
         "Oh, cool! I'll tag my vegan friend. She'll love this! Meato is not neato. @MarniexK",
-        "What are you? An idiot sandwich!"
+        "What are you? An idiot sandwich!",
+        "It's not just my mouth, all of my orifices are watering"
     ],
     commentInterval: 120000
 }
