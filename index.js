@@ -9,6 +9,8 @@ var feed;
 var session;
 
 console.log(`Version: ${config.version}`);
+console.log(`Username: ${config.username}`);
+console.log(`Tag: ${config.tag}`);
 
 Client.Session.create(device, storage, config.username, config.password)
     .then((sesh) => {
